@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Simran Patro - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #2196F3;
+            padding-bottom: 20px;
+        }
+        
+        .header-left h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+            letter-spacing: 1px;
+        }
+        
+        .header-left .title {
+            font-size: 1.2rem;
+            color: #2196F3;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info span {
+            color: #666;
+        }
+        
+        .profile-circle {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        
+        .summary p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+        }
+        
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        
+        .company {
+            color: #2196F3;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .date-location {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .experience-item ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .experience-item li {
+            margin-bottom: 6px;
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .experience-item li:before {
+            content: "•";
+            color: #2196F3;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .projects-item {
+            margin-bottom: 20px;
+        }
+        
+        .project-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .project-tech {
+            color: #666;
+            font-style: italic;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+        
+        .certification-item {
+            margin-bottom: 15px;
+        }
+        
+        .cert-name {
+            color: #2196F3;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .cert-issuer {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        .achievement-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .achievement-icon {
+            color: #2196F3;
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+        
+        .achievement-content h3 {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+            font-size: 0.95rem;
+        }
+        
+        .achievement-content p {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list li {
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        
+        .skills-list .skill-category {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .education-item {
+            margin-bottom: 15px;
+        }
+        
+        .degree {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        
+        .university {
+            color: #2196F3;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .header-left h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>SAI SIMRAN PATRO</h1>
+                <div class="title">Specialist Programmer</div>
+                <div class="contact-info">
+                    <span>📞 (+91) 7681075418</span>
+                    <span>✉️ simranpatrosai1@gmail.com</span>
+                    <span>🔗 LinkedIn: simran-sai003</span>
+                    <span>💻 LeetCode: simranpatrosai1</span>
+                    <span>🐙 GitHub: simran-sai</span>
+                    <span>📍 Bhubaneswar, India</span>
+                </div>
+            </div>
+            <div class="profile-circle">SS</div>
+        </div>
+        
+        <div class="main-content">
+            <div class="left-column">
+                <div class="section">
+                    <h2>Summary</h2>
+                    <div class="summary">
+                        <p>I am a dedicated programming professional currently pursuing a Bachelor's degree in Information Technology. My experience as a Specialist Programmer at Infosys has equipped me with robust skills in ETL workflows, real-time streaming, and Azure cloud services. I excel in creating scalable data solutions and contributing to impactful projects. I have also interned at Apphelix and Velora AI, where I enhanced my software development expertise and demonstrated my ability to build innovative tools.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Specialist Programmer</div>
+                        <div class="company">Infosys</div>
+                        <div class="date-location">
+                            <span>📅 06/2025 - Present</span>
+                            <span>📍 Bhubaneswar, India</span>
+                        </div>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px; font-style: italic;">Infosys is a global leader in next-generation digital services and consulting</p>
+                        <ul>
+                            <li>Developed and optimized ETL workflows and data pipelines using PySpark (RDDs, DataFrames, Spark SQL) for large-scale batch processing</li>
+                            <li>Implemented low-latency real-time streaming pipelines with Apache Kafka integrated with Azure Data Factory</li>
+                            <li>Orchestrated Azure-based data workflows (HDInsight, Databricks, Data Factory, Cosmos DB) ensuring reliability and scalability</li>
+                            <li>Designed fault-tolerant, production-ready solutions for distributed data systems</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">SDE Intern</div>
+                        <div class="company">Apphelix</div>
+                        <div class="date-location">
+                            <span>📅 02/2025 - 05/2025</span>
+                            <span>📍 Bhubaneswar, India</span>
+                        </div>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px; font-style: italic;">Apphelix is known for innovative software solutions and applications</p>
+                        <ul>
+                            <li>Built an AI-powered code review tool (Python, LLMs) to automate GitHub PR corrections</li>
+                            <li>Developed a Customer Engagement Dashboard (MERN) for real-time analytics and insights</li>
+                            <li>Contributed to the EDX open-source platform, improving collaborative workflows</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Intern</div>
+                        <div class="company">Velora AI</div>
+                        <div class="date-location">
+                            <span>📅 11/2023 - 01/2024</span>
+                            <span>📍 Remote</span>
+                        </div>
+                        <ul>
+                            <li>Built a rich text editor using Quill; integrated Mistral-7B + LangChain for assisted content creation</li>
+                            <li>Implemented URL processing and auto-completion features to enhance authoring efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>Education</h2>
+                    <div class="education-item">
+                        <div class="degree">Bachelor of Technology in Information Technology</div>
+                        <div class="university">IIIT Bhubaneswar</div>
+                        <div class="date-location">
+                            <span>📅 Dec 2021 - Jun 2025</span>
+                            <span>📊 CGPA: 8.23</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>Projects</h2>
+                    
+                    <div class="projects-item">
+                        <div class="project-title">Multi-Agent AI Use Case Generator</div>
+                        <div class="project-tech">Python, LangChain, HuggingFace, Streamlit</div>
+                        <p style="color: #555; font-size: 0.9rem;">Multi-agent system that generates AI adoption strategies and actionable recommendations using market and product-fit analysis.</p>
+                    </div>
+                    
+                    <div class="projects-item">
+                        <div class="project-title">PM2.5 Prediction & Visualization</div>
+                        <div class="project-tech">Machine Learning, Python, Streamlit</div>
+                        <p style="color: #555; font-size: 0.9rem;">Built a regression model for PM 2.5 prediction using environmental parameters with high accuracy.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>Technical Skills</h2>
+                    <ul class="skills-list">
+                        <li><span class="skill-category">Languages:</span> C++, Python, SQL</li>
+                        <li><span class="skill-category">Big Data / ETL:</span> Hadoop, PySpark (Core, DataFrame, Spark SQL), Apache Kafka, MongoDB</li>
+                        <li><span class="skill-category">Azure:</span> HDInsight, Databricks, Data Factory, Cosmos DB</li>
+                        <li><span class="skill-category">AI/ML:</span> Machine Learning, NLP, Generative AI, LLMs, LangChain</li>
+                        <li><span class="skill-category">Others:</span> GitHub Collaboration, Unix/Linux, Secure SDLC, Real-Time Analytics</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="section">
+                    <h2>Certification</h2>
+                    
+                    <div class="certification-item">
+                        <div class="cert-name">Microsoft Azure Data Fundamentals (DP-900)</div>
+                        <div class="cert-issuer">Infosys Certified</div>
+                    </div>
+                    
+                    <div class="certification-item">
+                        <div class="cert-name">Azure Fundamentals (AZ-900)</div>
+                        <div class="cert-issuer">Infosys Certified</div>
+                    </div>
+                    
+                    <div class="certification-item">
+                        <div class="cert-name">Azure HDInsight</div>
+                        <div class="cert-issuer">Infosys Certified</div>
+                    </div>
+                    
+                    <div class="certification-item">
+                        <div class="cert-name">Azure Databricks</div>
+                        <div class="cert-issuer">Infosys Certified</div>
+                    </div>
+                    
+                    <div class="certification-item">
+                        <div class="cert-name">Azure Data Factory</div>
+                        <div class="cert-issuer">Infosys Certified</div>
+                    </div>
+                    
+                    <div class="certification-item">
+                        <div class="cert-name">Azure Cosmos DB</div>
+                        <div class="cert-issuer">Infosys Certified</div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>Key Achievements</h2>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🏆</div>
+                        <div class="achievement-content">
+                            <h3>LeetCode and GFG Problem Solving</h3>
+                            <p>Solved 400+ problems on LeetCode and GFG (Data Structures, Algorithms, SQL)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🥈</div>
+                        <div class="achievement-content">
+                            <h3>Smart India Hackathon</h3>
+                            <p>Finalist, Smart India Hackathon (Job Searching Platform for Specially Abled)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🏅</div>
+                        <div class="achievement-content">
+                            <h3>HackSharks Competition</h3>
+                            <p>Winner, HackSharks by Devpost (Top 200 globally)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-item">
+                        <div class="achievement-icon">👨‍💼</div>
+                        <div class="achievement-content">
+                            <h3>Community Leadership</h3>
+                            <p>Led a 50+ member programming community as Head, Programming Society IIIT-BH</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
